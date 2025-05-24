@@ -12,7 +12,7 @@ import time
 
 # --- PAGE CONFIG: must be first Streamlit command ---
 st.set_page_config(
-    page_title="Hangrutsch-Simulation / Landslide Simulation",
+    page_title="Erdrutsch-Simulation / Landslide Simulation",
     page_icon="🏔️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -30,25 +30,25 @@ def get_parameter_explanation():
     ### Verständnis der physikalischen Parameter
     
     #### Coulomb-Reibung (μ)
-    Dieser Parameter beschreibt die grundlegende Reibung zwischen dem Hangrutschmaterial und der Hangoberfläche.
-    - **Höhere Werte** (näher an 0,5) bedeuten mehr Reibung, was zu kürzeren Auslaufweiten und langsameren Hangrutschen führt
-    - **Niedrigere Werte** (näher an 0,01) stehen für rutschigere Bedingungen, wodurch der Hangrutsch schneller und weiter läuft
+    Dieser Parameter beschreibt die grundlegende Reibung zwischen dem Erdrutschmaterial und der Hangoberfläche.
+    - **Höhere Werte** (näher an 0,5) bedeuten mehr Reibung, was zu kürzeren Auslaufweiten und langsameren Erdrutschen führt
+    - **Niedrigere Werte** (näher an 0,01) stehen für rutschigere Bedingungen, wodurch der Erdrutsch schneller und weiter läuft
     
     #### Turbulente Reibung (ξ)
-    Dieser Parameter beschreibt den Widerstand durch Turbulenzen im fließenden Hangrutschmaterial.
+    Dieser Parameter beschreibt den Widerstand durch Turbulenzen im fließenden Erdrutschmaterial.
     - **Höhere Werte** (näher an 2200) bedeuten mehr innere Turbulenz und beeinflussen das Fließverhalten
     - **Niedrigere Werte** (näher an 100) stehen für laminare Fließbedingungen
     
-    Die Kombination dieser Parameter bestimmt das Verhalten des Hangrutsches in den Simulationen.
+    Die Kombination dieser Parameter bestimmt das Verhalten des Erdrutsches in den Simulationen.
     """
     return erklaerung
 
 def get_educational_content():
-    """Gibt Lerninhalte zu Hangrutschen zurück."""
+    """Gibt Lerninhalte zu Erdrutschen zurück."""
     inhalt = """
-    ### Hangrutsche: Mächtige Naturkräfte
+    ### Erdrutsche: Mächtige Naturkräfte
     
-    Hangrutsche gehören zu den mächtigsten und zerstörerischsten Naturereignissen. Sie entstehen, wenn Massen aus Gestein, Erde oder Schutt aufgrund der Schwerkraft einen Hang hinabgleiten.
+    Erdrutsche gehören zu den mächtigsten und zerstörerischsten Naturereignissen. Sie entstehen, wenn Massen aus Gestein, Erde oder Schutt aufgrund der Schwerkraft einen Hang hinabgleiten.
     
     #### Wichtige Einflussfaktoren:
     1. **Hangneigung** – Steilere Hänge sind instabiler
@@ -56,7 +56,7 @@ def get_educational_content():
     3. **Wassergehalt** – Erhöht das Gewicht und verringert die Reibung
     4. **Auslöser** – Erdbeben, starke Regenfälle, menschliche Aktivitäten
     
-    Mit dieser Simulation kannst du erforschen, wie verschiedene Reibungsbedingungen das Verhalten von Hangrutschen beeinflussen – wichtig für Gefahrenabschätzung und Risikovermeidung in gefährdeten Gebieten.
+    Mit dieser Simulation kannst du erforschen, wie verschiedene Reibungsbedingungen das Verhalten von Erdrutschen beeinflussen – wichtig für Gefahrenabschätzung und Risikovermeidung in gefährdeten Gebieten.
     """
     return inhalt
 
@@ -97,18 +97,18 @@ def get_educational_content_en():
 # --- LANGUAGE DICTIONARIES ---
 LANGUAGES = {
     "de": {
-        "page_title": "Hangrutsch-Simulation",
+        "page_title": "Erdrutsch-Simulation",
         "tab_sim": "Simulationsmodus",
         "tab_game": "Spielmodus",
-        "tab_learn": "Lerne über Hangrutsche",
-        "main_header": "Hangrutsch-Simulation",
+        "tab_learn": "Lerne über Erdrutsche",
+        "main_header": "Erdrutsch-Simulation",
         "phys_params": "Physikalische Parameter",
         "start_sim": "Simulation starten",
         "show_metrics": "Metriken anzeigen",
         "sim_metrics": "Simulationsmetriken",
-        "landslide_anim": "Hangrutsch-Animation",
+        "landslide_anim": "Erdrutsch-Animation",
         "param_expander": "Parameter verstehen",
-        "game_title": "Kalibrierungs-Challenge: Hangrutsch",
+        "game_title": "Kalibrierungs-Challenge: Erdrutsch",
         "game_desc": "Stelle die Parameter so ein, dass der Felsbrocken möglichst nah am Sensor zum Stehen kommt.",
         "sensor_info": "Der Sensor befindet sich bei **{observation_x} Metern**. Passe die Parameter an, damit der Felsbrocken möglichst nah dort stoppt.",
         "your_guess": "### Deine Vorhersage",
@@ -119,19 +119,19 @@ LANGUAGES = {
         "no_gif": "Keine Animation gefunden für μ = {mu}, ξ = {xi}. Nächste verfügbare Optionen werden angezeigt.",
         "try_again": "Nochmal versuchen",
         "suggestion_header": "#### Probiere diese verfügbaren Parameter:",
-        "learn_header": "# Die Wissenschaft der Hangrutsche",
+        "learn_header": "# Die Wissenschaft der Erdrutsche",
         "landslide_types": {
             "Murgang": "Schnell fließende Mischung aus Wasser, Gestein, Erde und organischem Material. Tritt oft nach starkem Regen auf.",
             "Felssturz": "Plötzlicher Absturz von Felsen von einer Klippe oder einem steilen Hang durch die Schwerkraft.",
             "Rutschung": "Massenbewegung, bei der Material entlang einer gekrümmten Fläche nach unten und außen gleitet.",
             "Erdfall": "Zähflüssiges Fließen von feinkörnigem, wassergesättigtem Material."
         },
-        "types_header": "### Arten von Hangrutschen",
+        "types_header": "### Arten von Erdrutschen",
         "practice_header": "### Anwendungen in der Praxis",
         "practice_content": """
-        Das Verständnis der Hangrutsch-Physik hilft bei:
+        Das Verständnis der Erdrutsch-Physik hilft bei:
         1. **Gefahrenabschätzung**: Risikogebiete erkennen
-        2. **Frühwarnsystemen**: Vorhersage von Hangrutsch-Ereignissen
+        2. **Frühwarnsystemen**: Vorhersage von Erdrutsch-Ereignissen
         3. **Infrastrukturplanung**: Sicherer Bau von Straßen und Gebäuden
         4. **Notfallmanagement**: Planung von Evakuierungsrouten und Ressourcen
         """,
@@ -141,22 +141,22 @@ LANGUAGES = {
         "metrics": {
             "runout_distance": {
                 "name": "Auslaufweite",
-                "description": "Maximale Strecke, die der Hangrutsch zurücklegt",
+                "description": "Maximale Strecke, die der Erdrutsch zurücklegt",
                 "unit": "Meter"
             },
             "max_velocity": {
                 "name": "Maximale Geschwindigkeit",
-                "description": "Höchstgeschwindigkeit während des Hangrutsch-Ereignisses",
+                "description": "Höchstgeschwindigkeit während des Erdrutsch-Ereignisses",
                 "unit": "m/s"
             },
             "affected_area": {
                 "name": "Betroffene Fläche",
-                "description": "Gesamte vom Hangrutsch betroffene Fläche",
+                "description": "Gesamte vom Erdrutsch betroffene Fläche",
                 "unit": "m²"
             },
             "duration": {
                 "name": "Ereignisdauer",
-                "description": "Gesamtdauer bis der Hangrutsch stoppt",
+                "description": "Gesamtdauer bis der Erdrutsch stoppt",
                 "unit": "Sekunden"
             }
         }
@@ -605,7 +605,7 @@ def main():
                     st.markdown(
                         f"""
                         <div style='display: flex; justify-content: center; margin: 0 0 20px 0;'>
-                            <img src='data:image/gif;base64,{gif_base64}' alt='Hangrutsch-Animation' style='max-width: 100%; max-height: 500px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);'>
+                            <img src='data:image/gif;base64,{gif_base64}' alt='Erdrutsch-Animation' style='max-width: 100%; max-height: 500px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);'>
                         </div>
                         """,
                         unsafe_allow_html=True,
